@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Portfolio</title>
+
+    <style>
+      body {
+        background-color: black;
+        width: 100vw;
+        height: 100vh;
+      }
+      .created-element {
+          position: absolute;
+          background-color: #3498db;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+      }
+    </style>
+
+  </head>
+  <body>
+
+  <script>
+        const colors = ['#3498db', '#e74c3c', '#2ecc71', '#f1c40f', '#9b59b6', '#e67e22', '#1abc9c', '#34495e'];
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            
+            document.body.addEventListener('click', function (event) {
+
+                const element = document.createElement('div');
+            
+                element.className = 'created-element';
+                element.style.left = (event.x - 25) + 'px';
+                element.style.top = (event.y - 25) + 'px';
+
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+                element.style.backgroundColor = randomColor;
+
+                document.body.appendChild(element);
+            });
+        });
+  </script>
+</body>
+</html>
